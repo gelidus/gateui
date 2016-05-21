@@ -14,9 +14,4 @@ describe('App: Affil', () => {
       inject([AffilAppComponent], (app: AffilAppComponent) => {
     expect(app).toBeTruthy();
   }));
-
-  it('should have as title \'affil works!\'',
-      inject([AffilAppComponent], (app: AffilAppComponent) => {
-    expect(app.title).toEqual('affil works!');
-  }));
 });

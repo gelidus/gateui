@@ -3,8 +3,11 @@ import { MdToolbar } from '@angular2-material/toolbar';
 import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav';
 import { MdIcon, MdIconRegistry } from '@angular2-material/icon';
 import { MdButton } from '@angular2-material/button';
+import { PortalComponent } from './+portal';
+import { Routes , ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
+import { LandingComponent } from './+landing';
 
-import { AuthService } from './auth.service';
+import { AuthService, Role } from './auth.service';
 
 @Component({
   moduleId: module.id,
@@ -21,10 +24,19 @@ import { AuthService } from './auth.service';
     MdIconRegistry
   ]
 })
+@Routes([
+  {path: '/portal', component: PortalComponent},
+  {path: '/landing', component: LandingComponent}
+])
 export class AffilAppComponent {
   
-  constructor() {
-    
+  // current role
+  role:Role = Role.Visitor;
+  
+  constructor(private _auth:AuthService) {
+       this._auth.role.subscribe(
+         (r) => { this.role = r; }
+       )
   }
   
   // menu that should be displayed to the business developers
