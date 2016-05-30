@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs/Rx';
 
 export enum Role {
-  Visitor,
-  Partner,
-  BusinessDeveloper
+  User,
+  Admin
 }
 
 @Injectable()

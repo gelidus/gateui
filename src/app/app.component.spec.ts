@@ -5,7 +5,7 @@ import {
   it,
   inject
 } from '@angular/core/testing';
-import { AffilAppComponent } from '../app/affil.component';
+import { AffilAppComponent } from '../app/app.component';
 
 beforeEachProviders(() => [AffilAppComponent]);
 

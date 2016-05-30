@@ -11,9 +11,9 @@ import { AuthService, Role } from './auth.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'affil-app',
-  templateUrl: 'affil.component.html',
-  styleUrls: ['affil.component.css'],
+  selector: 'app',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.css'],
   directives: [
     MdToolbar,
     MdIcon,
@@ -28,10 +28,10 @@ import { AuthService, Role } from './auth.service';
   {path: '/portal', component: PortalComponent},
   {path: '/landing', component: LandingComponent}
 ])
-export class AffilAppComponent {
+export class AppComponent {
   
   // current role
-  role:Role = Role.Visitor;
+  role:Role = Role.User;
   
   constructor(private _auth:AuthService) {
        this._auth.role.subscribe(
