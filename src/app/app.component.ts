@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MdToolbar } from '@angular2-material/toolbar';
 import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav';
+import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
 import { MdIcon, MdIconRegistry } from '@angular2-material/icon';
 import { MdButton } from '@angular2-material/button';
 import { PortalComponent } from './+portal';
@@ -18,7 +19,8 @@ import { AuthService, Role } from './auth.service';
     MdToolbar,
     MdIcon,
     MdButton,
-    MD_SIDENAV_DIRECTIVES
+    MD_SIDENAV_DIRECTIVES,
+    MD_LIST_DIRECTIVES
   ],
   providers: [
     MdIconRegistry
@@ -32,6 +34,19 @@ export class AppComponent {
   
   // current role
   role:Role = Role.User;
+  
+  routes = [
+    {
+      name: 'Home',
+      description: 'Something',
+      icon: 'home'
+    },
+    {
+      name: 'Profile',
+      description: 'Something else',
+      icon: 'person'
+    }
+  ]
   
   constructor(private _auth:AuthService) {
        this._auth.role.subscribe(
