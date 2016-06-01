@@ -46,7 +46,7 @@ export class AppComponent {
       description: 'Something else',
       icon: 'person'
     }
-  ]
+  ];
   
   constructor(private _auth:AuthService) {
        this._auth.role.subscribe(

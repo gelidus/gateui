@@ -5,13 +5,13 @@ import {
   it,
   inject
 } from '@angular/core/testing';
-import { AffilAppComponent } from '../app/app.component';
+import { AppComponent } from '../app/app.component';
 
-beforeEachProviders(() => [AffilAppComponent]);
+beforeEachProviders(() => [AppComponent]);
 
-describe('App: Affil', () => {
+describe('App: MaterialApp', () => {
   it('should create the app',
-      inject([AffilAppComponent], (app: AffilAppComponent) => {
+      inject([AppComponent], (app: AppComponent) => {
     expect(app).toBeTruthy();
   }));
 });
