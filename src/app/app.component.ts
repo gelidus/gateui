@@ -1,9 +1,4 @@
 import { Component } from '@angular/core';
-import { MdToolbar } from '@angular2-material/toolbar';
-import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav';
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
-import { MdIcon, MdIconRegistry } from '@angular2-material/icon';
-import { MdButton } from '@angular2-material/button';
 import { PortalComponent } from './+portal';
 import { Routes , ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
 import { LandingComponent } from './+landing';
@@ -14,17 +9,7 @@ import { AuthService, Role } from './auth.service';
   moduleId: module.id,
   selector: 'app',
   templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css'],
-  directives: [
-    MdToolbar,
-    MdIcon,
-    MdButton,
-    MD_SIDENAV_DIRECTIVES,
-    MD_LIST_DIRECTIVES
-  ],
-  providers: [
-    MdIconRegistry
-  ]
+  styleUrls: ['app.component.css']
 })
 @Routes([
   {path: '/portal', component: PortalComponent},
