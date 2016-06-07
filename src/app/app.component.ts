@@ -60,10 +60,4 @@ export class AppComponent {
   switchLang() {
     this._translate.use((this._translate.currentLang == 'cz' ? 'en' : 'cz'));
   }
-
-  // menu that should be displayed to the business developers
-  bizdevMenu = [];
-
-  // menu that should be displayed to the partners
-  partnerMenu = [];
 }
