@@ -1,5 +1,5 @@
 {
-  "name": "affil",
+  "name": "ng2-app",
   "version": "0.0.0",
   "license": "MIT",
   "angular-cli": {},
@@ -50,6 +50,7 @@
     "karma-chrome-launcher": "^0.2.3",
     "karma-jasmine": "^0.3.8",
     "ng2-translate": "2.1.0",
+    "node-sass": "^3.7.0",
     "protractor": "^3.3.0",
     "ts-node": "^0.5.5",
     "tslint": "^3.6.0",
