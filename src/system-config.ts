@@ -3,7 +3,8 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
-  '@angular2-material': 'vendor/@angular2-material'
+  '@angular2-material': 'vendor/@angular2-material',
+  'ng2-translate': 'vendor/ng2-translate'
 };
 
 /** User packages configuration. */
@@ -21,6 +22,14 @@ const materialPackages:string[] = [
 ];
 
 const packages: any = createCustomConfig(materialPackages);
+
+
+packages['ng2-translate'] = {
+  format: 'cjs',
+  defaultExtension: 'js',
+  main: 'ng2-translate'
+};
+
 
 function createCustomConfig(packages: string[]): any {
   return packages.reduce((packageConfig: any, packageName: string) => {
@@ -47,7 +56,7 @@ const barrels: string[] = [
   '@angular/platform-browser',
   '@angular/platform-browser-dynamic',
 
-  // Thirdparty barrels.
+  // Third party barrels.
   'rxjs',
 
   // App specific barrels.

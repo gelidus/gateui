@@ -1,0 +1,7 @@
+{
+  "HELLO": "ahoj {{value}}",
+  "obj": {
+    "key": "hodnota je {{value}}",
+    "works": "funguje!"
+  }
+}

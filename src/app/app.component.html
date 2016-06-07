@@ -15,7 +15,13 @@
     </button>
     Portal
   </md-toolbar>
-  
+
+  <!-- Translate example and test -->
+  <h1>{{ 'HELLO' | translate:{value: param} }}</h1>
+  <h3>Wololo {{ 'obj.key' | translate:{value: param} }}</h3>
+  <p>and it just <b>{{ 'obj.works' | translate }}</b></p>
+  <button (click)="switchLang()">Switch language</button>
+
   <!-- content -->
   <router-outlet></router-outlet>
   

@@ -1,10 +1,9 @@
-import { bootstrap } from '@angular/platform-browser-dynamic';
-import { enableProdMode, provide, PLATFORM_DIRECTIVES } from '@angular/core';
-import { HTTP_PROVIDERS } from '@angular/http';
-import { AppComponent, environment } from './app/';
-
-import { AuthService } from './app/auth.service';
-
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {enableProdMode, provide, PLATFORM_DIRECTIVES} from '@angular/core';
+import {HTTP_PROVIDERS} from '@angular/http';
+import {Http} from '@angular/http';
+import {AppComponent, environment} from './app/';
+import {AuthService} from './app/auth.service';
 import {MdToolbar} from '@angular2-material/toolbar';
 import {MdButton} from '@angular2-material/button';
 import {MD_SIDENAV_DIRECTIVES} from '@angular2-material/sidenav';
@@ -14,10 +13,16 @@ import {MdInput} from '@angular2-material/input';
 import {MdCheckbox} from '@angular2-material/checkbox';
 import {MdRadioButton, MdRadioGroup, MdRadioDispatcher} from '@angular2-material/radio';
 import {MdIcon, MdIconRegistry} from '@angular2-material/icon';
+import {TranslateService} from "ng2-translate/ng2-translate";
+import {TranslateLoader, TranslateStaticLoader} from "ng2-translate/ng2-translate";
 
 if (environment.production) {
   enableProdMode();
 }
+
+console.log('TranslateService', TranslateService);
+console.log('Http', Http);
+
 
 bootstrap(AppComponent, [
   HTTP_PROVIDERS,
@@ -30,5 +35,11 @@ bootstrap(AppComponent, [
       MdIcon
     ], multi: true
   }),
-  MdIconRegistry, MdRadioDispatcher
+  MdIconRegistry, MdRadioDispatcher,
+  provide(TranslateLoader, {
+    useFactory: (http: Http) => new TranslateStaticLoader(http, 'translations', '.json'),
+    deps: [Http]
+  }),
+  // use TranslateService here, and not TRANSLATE_PROVIDERS (which will define a default TranslateStaticLoader)
+  TranslateService
 ]);
