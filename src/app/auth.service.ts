@@ -8,13 +8,13 @@ export enum Role {
 
 @Injectable()
 export class AuthService {
-  
+
   public role: Subject<Role>;
 
   constructor() {
     this.role = new Subject<Role>();
   }
-  
+
   updateRole(r: Role) {
     this.role.next(r);
   }

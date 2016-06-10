@@ -1,10 +1,10 @@
-import {Component} from '@angular/core';
-import {PortalComponent} from './+portal';
-import {Routes, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
-import {LandingComponent} from './+landing';
+import { Component } from '@angular/core';
+import { PortalComponent } from './+portal';
+import { Routes, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router';
+import { LandingComponent } from './+landing';
 
-import {AuthService, Role} from './auth.service';
-import {TranslateService, TranslatePipe} from "ng2-translate/ng2-translate";
+import { AuthService, Role } from './auth.service';
+import { TranslateService, TranslatePipe } from "ng2-translate/ng2-translate";
 
 @Component({
   moduleId: module.id,
