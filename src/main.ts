@@ -20,10 +20,6 @@ if (environment.production) {
   enableProdMode();
 }
 
-console.log('TranslateService', TranslateService);
-console.log('Http', Http);
-
-
 bootstrap(AppComponent, [
   HTTP_PROVIDERS,
   AuthService,
