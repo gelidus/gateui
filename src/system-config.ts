@@ -64,6 +64,10 @@ const barrels: string[] = [
   'app/shared',
   'app/+portal',
   'app/+landing',
+  'app/+portal/+dashboard',
+  'app/+portal/+packages',
+  'app/+portal/+packages/add-package-form',
+  'app/+portal/+adapter',
   /** @cli-barrel */
 ];
 

@@ -1,0 +1,22 @@
+<div class="add-package-form">
+  <md-card>
+    <md-card-title>Add Package</md-card-title>
+    <md-card-content>
+      <form (ngSubmit)="onSubmit()">
+        <p>
+          <md-input [(ngModel)]="packageItem.name" required dividerColor="primary" placeholder="Name"></md-input>
+        </p>
+        <p>
+          <md-input [(ngModel)]="packageItem.version" required dividerColor="primary" placeholder="Version"></md-input>
+        </p>
+        <p>
+          <md-input [(ngModel)]="packageItem.path" required dividerColor="primary" placeholder="Script path"></md-input>
+        </p>
+        <p>
+          <md-input [(ngModel)]="packageItem.purpose" dividerColor="primary" placeholder="Purpose"></md-input>
+        </p>
+        <button md-raised-button type="submit">Save</button>
+      </form>
+    </md-card-content>
+  </md-card>
+</div>

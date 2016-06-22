@@ -1,0 +1,25 @@
+<div class="packages">
+  <md-card>
+    <md-list>
+      <div>
+        <md-list-item class="list-header">
+          <span class="item">NAME</span>
+          <span class="item">VERSION</span>
+          <span class="item">PATH</span>
+          <span class="item">PURPOSE</span>
+        </md-list-item>
+        <md-divider></md-divider>
+      </div>
+      <div *ngFor="let package of packages">
+        <md-list-item>
+          <span class="item">{{package.name}}</span>
+          <span class="item">{{package.version}}</span>
+          <span class="item">{{package.path}}</span>
+          <span class="item">{{package.purpose}}</span>
+        </md-list-item>
+        <md-divider></md-divider>
+      </div>
+    </md-list>
+  </md-card>
+</div>
+<app-add-package-form></app-add-package-form>

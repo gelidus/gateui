@@ -1,0 +1,48 @@
+<div class="dashboard">
+
+  <div class="list-and-detail">
+    <md-card class="list">
+      <md-input placeholder="Search" class="search">
+        <md-icon md-prefix>search</md-icon>
+      </md-input>
+      <md-nav-list>
+        <div *ngFor="let item of items" (click)="setItem(item)">
+          <md-list-item>
+            <span class="item">{{item.id}}</span>
+            <span class="item">{{item.name}}</span>
+            <span class="item">{{item.date | date }}</span>
+          </md-list-item>
+          <md-divider></md-divider>
+        </div>
+      </md-nav-list>
+    </md-card>
+
+
+    <md-card class="detail">
+      <md-card-title>Detail</md-card-title>
+
+      <md-card-content *ngIf="selectedItem">
+        <md-list class="detail-list">
+          <md-list-item>
+            <span>IP: </span>
+            <span class="fill-remaining"></span>
+            {{selectedItem.ip}}
+          </md-list-item>
+          <md-divider></md-divider>
+          <md-list-item>
+            <span>SID: </span>
+            <span class="fill-remaining"></span>
+            {{selectedItem.sid}}
+          </md-list-item>
+          <md-divider></md-divider>
+        </md-list>
+        <img md-card-image src="http://www.qrstuff.com/images/sample.png" class="qr-code">
+      </md-card-content>
+      <md-divider></md-divider>
+      <md-card-actions align="end">
+        <button md-raised-button color="primary" (click)="viewItem()">VIEW</button>
+      </md-card-actions>
+    </md-card>
+  </div>
+
+</div>

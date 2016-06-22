@@ -1,0 +1,39 @@
+<div class="adapter">
+  <md-card>
+    <md-card-title>Adapter</md-card-title>
+    <md-card-content>
+      <!-- Info + QR code -->
+      <div class="top-info">
+        <div class="info">
+          <p>ID: 123</p>
+          <p>SID: #123</p>
+          <button md-raised-button (click)="onSend()">Send</button>
+        </div>
+        <div class="qr-div">
+          <img md-card-image src="http://www.qrstuff.com/images/sample.png" class="qr-code">
+        </div>
+      </div>
+
+      <!-- Results list -->
+      <p>Results</p>
+      <md-list>
+        <div>
+          <md-list-item class="list-header">
+            <span class="item">TIME</span>
+            <span class="item">PACKAGE</span>
+            <span class="item">RESULT</span>
+          </md-list-item>
+          <md-divider></md-divider>
+        </div>
+        <div *ngFor="let item of data">
+          <md-list-item>
+            <span class="item">{{item.time | date}}</span>
+            <span class="item">{{item.packageName}}</span>
+            <span class="item">{{item.result}}</span>
+          </md-list-item>
+          <md-divider></md-divider>
+        </div>
+      </md-list>
+    </md-card-content>
+  </md-card>
+</div>

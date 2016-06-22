@@ -1,0 +1,43 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+}
+.search {
+}
+.list-and-detail {
+  display: flex;
+  flex-direction: row;
+}
+
+.list {
+  width: 50%;
+}
+.detail {
+  width: 50%;
+}
+
+.item {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.detail-list {
+  justify-content: space-between;
+}
+md-card {
+  margin: 32px;
+}
+
+md-card-content{
+  display: flex;
+  flex-direction: column;
+}
+
+.qr-code {
+  width: 50%;
+  align-self: center;
+}
+
+.fill-remaining {
+  flex: 1 1 auto;
+}

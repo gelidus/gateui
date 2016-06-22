@@ -1,0 +1,25 @@
+.adapter {
+  display: flex;
+}
+.top-info {
+  display: flex;
+}
+.info {
+  width: 50%;
+}
+
+.qr-div {
+  width: 50%;
+}
+.qr-code {
+  width: 50%;
+  align-self: center;
+}
+
+.list-header {
+  font-weight: bold;
+}
+.item {
+  flex-grow: 1;
+  flex-basis: 0;
+}

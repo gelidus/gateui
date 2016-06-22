@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { PortalComponent } from './+portal';
-import { Routes, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router';
+import { Routes, Router, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router';
 import { LandingComponent } from './+landing';
-
 import { AuthService, Role } from './auth.service';
 import { TranslateService, TranslatePipe } from "ng2-translate/ng2-translate";
 
@@ -11,7 +10,9 @@ import { TranslateService, TranslatePipe } from "ng2-translate/ng2-translate";
   selector: 'app',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
-  pipes: [TranslatePipe]
+  pipes: [TranslatePipe],
+  directives: [ROUTER_DIRECTIVES],
+  providers: [ROUTER_PROVIDERS]
 })
 @Routes([
   {path: '/portal', component: PortalComponent},
@@ -26,19 +27,28 @@ export class AppComponent {
 
   routes = [
     {
-      name: 'Home',
+      name: 'Dashboard',
       description: 'Something',
-      icon: 'home'
+      icon: 'dashboard',
+      link: 'dashboard'
     },
     {
-      name: 'Profile',
+      name: 'Packages',
       description: 'Something else',
-      icon: 'person'
+      icon: 'wifi_lock',
+      link: 'packages'
+    },
+    {
+      name: 'Configurations',
+      description: 'Configurations',
+      icon: 'build',
+      link: 'configurations'
     }
   ];
 
   constructor(private _auth:AuthService,
-              private _translate:TranslateService) {
+              private _translate:TranslateService,
+              private _router:Router) {
 
     this._auth.role.subscribe((r) => {
       this.role = r;
@@ -59,5 +69,9 @@ export class AppComponent {
 
   switchLang() {
     this._translate.use((this._translate.currentLang == 'cz' ? 'en' : 'cz'));
+  }
+
+  redirect(link: string) {
+    this._router.navigate(['/portal/',link]);
   }
 }
