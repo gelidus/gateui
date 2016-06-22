@@ -1,6 +1,9 @@
 .adapter {
   display: flex;
 }
+md-card {
+  width: 100%;
+}
 .top-info {
   display: flex;
 }
@@ -10,6 +13,7 @@
 
 .qr-div {
   width: 50%;
+  align-self: center;
 }
 .qr-code {
   width: 50%;

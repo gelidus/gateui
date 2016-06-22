@@ -5,17 +5,21 @@
       <!-- Info + QR code -->
       <div class="top-info">
         <div class="info">
-          <p>ID: 123</p>
-          <p>SID: #123</p>
-          <button md-raised-button (click)="onSend()">Send</button>
+          <p>IP: {{adapter.ip}}</p>
+          <p>SID: {{adapter.sid}}</p>
+          <form (ngSubmit)="onSend()">
+            <md-input [(ngModel)]="packageName" required dividerColor="primary" placeholder="Package"></md-input>
+            <button md-raised-button>Send</button>
+          </form>
+
         </div>
         <div class="qr-div">
-          <img md-card-image src="http://www.qrstuff.com/images/sample.png" class="qr-code">
+          <img md-card-image [src]="adapter.qrcode" class="qr-code">
         </div>
       </div>
 
       <!-- Results list -->
-      <p>Results</p>
+      <md-card-title>Results</md-card-title>
       <md-list>
         <div>
           <md-list-item class="list-header">

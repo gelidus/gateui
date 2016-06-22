@@ -33,12 +33,16 @@ var AdapterComponent = (function () {
         ];
     }
     AdapterComponent.prototype.ngOnInit = function () {
+        // MOCK
+        this.adapter = { id: this.id, name: "test", ip: "192.168.1.1", sid: "#123", date: new Date(),
+            qrcode: "http://www.qrstuff.com/images/sample.png" };
     };
     AdapterComponent.prototype.routerOnActivate = function (curr) {
         this.id = +curr.getParam('id');
     };
     AdapterComponent.prototype.onSend = function () {
-        console.log("adapter send");
+        console.log(this.packageName);
+        this.packageName = "";
     };
     AdapterComponent = __decorate([
         core_1.Component({

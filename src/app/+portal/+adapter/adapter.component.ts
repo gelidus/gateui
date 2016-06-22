@@ -3,6 +3,7 @@ import {OnActivate, RouteSegment} from "@angular/router";
 import {MdIcon} from '@angular2-material/icon/icon';
 import {MD_CARD_DIRECTIVES} from '@angular2-material/card/card';
 import {MD_LIST_DIRECTIVES} from '@angular2-material/list/list';
+import {AdapterModel} from '../adapter-model';
 
 @Component({
   moduleId: module.id,
@@ -13,6 +14,8 @@ import {MD_LIST_DIRECTIVES} from '@angular2-material/list/list';
 })
 export class AdapterComponent implements OnActivate, OnInit {
   id: number;
+  adapter: AdapterModel;
+  packageName: string;
   data = [
     {
       id: 1,
@@ -36,6 +39,9 @@ export class AdapterComponent implements OnActivate, OnInit {
   constructor() {}
 
   ngOnInit() {
+    // MOCK
+    this.adapter = {id: this.id, name: "test", ip:"192.168.1.1", sid: "#123", date: new Date(),
+      qrcode: "http://www.qrstuff.com/images/sample.png"};
   }
 
   routerOnActivate(curr:RouteSegment) {
@@ -43,6 +49,7 @@ export class AdapterComponent implements OnActivate, OnInit {
   }
 
   onSend() {
-    console.log("adapter send");
+    console.log(this.packageName);
+    this.packageName = "";
   }
 }

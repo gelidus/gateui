@@ -1,8 +1,8 @@
 "use strict";
-var ItemModel = (function () {
-    function ItemModel() {
+var AdapterModel = (function () {
+    function AdapterModel() {
     }
-    return ItemModel;
+    return AdapterModel;
 }());
-exports.ItemModel = ItemModel;
+exports.AdapterModel = AdapterModel;
 //# sourceMappingURL=adapter-model.js.map
